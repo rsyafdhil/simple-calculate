@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Woilah cringe cik</title>
+    <h1>Calculate jodoh</h1>
+    <label for="">Pasangan 1</label>
+    <input type="text" id="pasangan1">
+    <label for="">Pasangan 2</label>
+    <input type="text" id="pasangan2">
+    <button type="button" id="calculate">Start Calculating</a>
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        var calcScore = Math.random() * 100;
+        calcScore = Math.floor(calcScore) + 1;
+
+        if ( calcScore > 60 ) {
+            ("Your love score is " + calcScore + "%" + " Wow, You love each other!");
+        } else if (calcScore > 30 && calcScore <= 70) {
+            ("Your love score is " + calcScore + "%" + " You two are okay together");
+        }
+        else {
+            ("Your love score is " + calcScore + "%" + " You two are like oil and water");
+        }
+
+        $(document).ready(function(){
+            $("#calculate").click(function(){
+                if ( calcScore > 60 ) {
+                    Swal.fire({
+                        title: calcScore + "%",
+                        text: 'Wow ' + $('#pasangan1').val() + ' and ' + $('#pasangan2').val() + ' you love each other',
+                        icon: 'info'
+                    });
+                } else if (calcScore > 30 && calcScore <= 70) {
+                    Swal.fire({
+                        title: calcScore + "%",
+                        text: $('#pasangan1').val() + ' and ' + $('#pasangan2').val() +  '' + 'are okay together',
+                        icon: 'info'
+                    });
+                }
+                else {
+                    Swal.fire({
+                        title: calcScore + "%",
+                        text: $('#pasangan1').val() + ' and ' +$('#pasangan2').val() + ' are like oil and water',
+                        icon: 'info',
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
