@@ -27,7 +27,7 @@
                         text: 'Wow ' + $('#pasangan1').val() + ' and ' + $('#pasangan2').val() + ' you love each other',
                         icon: 'info'
                     }).then(function(){
-                        window.location.reload();
+                        location.reload();
                     });
                 } else if (calcScore > 30 && calcScore <= 70) {
                     Swal.fire({
@@ -35,7 +35,7 @@
                         text: $('#pasangan1').val() + ' and ' + $('#pasangan2').val() +  '' + ' are okay together',
                         icon: 'info'
                     }).then(function(){
-                        window.location.reload();
+                        location.reload();
                     });;
                 }
                 else {
@@ -44,7 +44,7 @@
                         text: $('#pasangan1').val() + ' and ' +$('#pasangan2').val() + ' are like oil and water',
                         icon: 'info',
                     }).then(function(){
-                        window.location.reload();
+                        location.reload();
                     });;
                 }
             });
