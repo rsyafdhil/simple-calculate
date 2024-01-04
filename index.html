@@ -19,15 +19,6 @@
         var calcScore = Math.random() * 100;
         calcScore = Math.floor(calcScore) + 1;
 
-        if ( calcScore > 60 ) {
-            ("Your love score is " + calcScore + "%" + " Wow, You love each other!");
-        } else if (calcScore > 30 && calcScore <= 70) {
-            ("Your love score is " + calcScore + "%" + " You two are okay together");
-        }
-        else {
-            ("Your love score is " + calcScore + "%" + " You two are like oil and water");
-        }
-
         $(document).ready(function(){
             $("#calculate").click(function(){
                 if ( calcScore > 60 ) {
@@ -35,20 +26,26 @@
                         title: calcScore + "%",
                         text: 'Wow ' + $('#pasangan1').val() + ' and ' + $('#pasangan2').val() + ' you love each other',
                         icon: 'info'
+                    }).then(function(){
+                        window.location.reload();
                     });
                 } else if (calcScore > 30 && calcScore <= 70) {
                     Swal.fire({
                         title: calcScore + "%",
-                        text: $('#pasangan1').val() + ' and ' + $('#pasangan2').val() +  '' + 'are okay together',
+                        text: $('#pasangan1').val() + ' and ' + $('#pasangan2').val() +  '' + ' are okay together',
                         icon: 'info'
-                    });
+                    }).then(function(){
+                        window.location.reload();
+                    });;
                 }
                 else {
                     Swal.fire({
                         title: calcScore + "%",
                         text: $('#pasangan1').val() + ' and ' +$('#pasangan2').val() + ' are like oil and water',
                         icon: 'info',
-                    });
+                    }).then(function(){
+                        window.location.reload();
+                    });;
                 }
             });
         });
